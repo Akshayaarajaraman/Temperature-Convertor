@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta bame="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Temperature Convertor
+        </title>
+    </head>
+    <body>
+
+<link rel="stylesheet" href="temperature css.css"/>
+<script src="temperature js.js"></script>
+<div class="container">
+
+        <div class="title">
+            <center>
+            <h1>Temperature Converter </h1>
+            </center>
+            <span class="Temperature-icon"><i class="fa-solid fa-temperature-three-quarters"></i></span>
+        </div>
+
+        <div id="celsius">
+            <input type="number" name="" placeholder="Celsius">
+            <span class="icon">&#8451</span>
+        </div>
+        <div id="fahrenheit">
+            <input type="number" name="" placeholder="Fahrenheit">
+            <span class="icon">&#8457</span>
+        </div>
+        <div id="kelvin">
+            <input type="number" name="" placeholder="Kelvin">
+            <span class="icon">&#8490</span>
+        </div>
+
+        <div class="button">
+            <button>All Clear</button>
+        </div>
+        <div
+            class="button">
+            <button>Convert</button>
+        </div>
+        <script>
+            function convertTemperature() {
+                let inputTemp = parseFloat(document.getElementById("inputTemperature").value);
+                let inputUnit = document.getElementById("inputUnit").value;
+                let outputTemp;
+                if (inputUnit === "celsius"){
+                    outputTemp = (inputTemp * 9/5) + 32;
+                    document.getElementById("output").innerText = '${inputTemp} Celsius = ${outputTemp.toFixed(2)} Fahrenheit';
+                }else if (inputUnit === "fahrenheit"){
+                    outputTemp = (inputTemp - 32) * 5/9;
+                    document.getElementById("output").innerText = '${inputTemp} Fahrenheit = ${outputTemp.toFixed(2)} celsius';
+                }else if (inputUnit === "kelvin"){
+                    outputTemp = (inputTemp - 273.15);
+                    document.getElementById("output").innerText = '${inputTemp} Kelvin = ${outputTemp.toFixed(2)} celsius';
+                }
+            }
+        </script>
+    </body>
+</div>
+</html>
+
+    
